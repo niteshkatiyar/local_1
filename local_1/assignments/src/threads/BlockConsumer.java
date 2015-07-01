@@ -16,7 +16,7 @@ public class BlockConsumer {
 	{
 		try
 		{
-			Thread.sleep(1000);
+			Thread.sleep(200);
 			while(true)
 			{
 				System.out.println("Consumed: " + sharedQue.take() + "	Que size: "+sharedQue.size());
