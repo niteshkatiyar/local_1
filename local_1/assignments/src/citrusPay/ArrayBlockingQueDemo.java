@@ -18,8 +18,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class ArrayBlockingQueDemo {
 
-	private static BlockingQueue<Integer> arrayQue = new ArrayBlockingQueue<Integer>(
-			10);
+	private static BlockingQueue<Integer> arrayQue = new ArrayBlockingQueue<Integer>(10);
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

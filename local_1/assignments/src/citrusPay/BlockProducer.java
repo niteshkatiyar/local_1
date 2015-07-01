@@ -5,17 +5,22 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class BlockProducer {
-
-	private BlockingQueue<Integer> sharedQue = new ArrayBlockingQueue<Integer>(
-			10);
+	
+	private BlockingQueue<Integer> sharedQue = new ArrayBlockingQueue<Integer>(10);
 	Random random = new Random();
-
-	public BlockProducer(BlockingQueue sharedQue) {
+	
+	public BlockProducer(BlockingQueue sharedQue)
+	{
 		this.sharedQue = sharedQue;
 	}
-
-	public void produce() {
-		for (int i = 1; i <= sharedQue.size(); i++) {
+	
+	public void produce()
+	{
+		/*while(true)
+		{*/
+				
+		for(int i =1; i<=10; i++)
+		{
 			try {
 				Thread.sleep(100);
 				sharedQue.add(i);
@@ -23,8 +28,7 @@ public class BlockProducer {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("Produced: " + i + "	Que size: "
-					+ sharedQue.size());
+			System.out.println("Produced: "+i + "	Que size: "+sharedQue.size());
 		}
 	}
 }

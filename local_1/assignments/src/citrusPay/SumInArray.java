@@ -2,6 +2,7 @@ package citrusPay;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /*
  * 
@@ -17,31 +18,25 @@ import java.util.Map;
  * 
  * */
 
-class App {
+class ArrayApp {
 
 	public boolean checkSumInArray(int[] array, int sum) {
 		int temp = 0, hash = 0;
-		Map<Integer, Integer> arrayMap = new HashMap<Integer, Integer>(); // create
-																			// a
-																			// HashMap
-																			// with
-																			// all
-																			// values
-																			// of
-																			// Array
+		
+		// create HashMap with all values of Array
+		Map<Integer, Integer> arrayMap = new HashMap<Integer, Integer>(); 
 
 		for (int i = 0; i < array.length; i++) {
-			arrayMap.put(array[i], array[i]); // Inserting values of array into
-												// HashMap
+			// Inserting values of array into HashMap
+			arrayMap.put(array[i], array[i]); 
 		}
 
 		for (int i = 0; i < array.length; i++) {
-			temp = sum - array[i]; // subtract the given sum value from each
-									// element in array
+			// subtract the given sum value from array elements 
+			temp = sum - array[i]; 
 			try {
-				hash = (int) arrayMap.get(temp); // and lookup into HashMap for
-													// remainder
-
+				// and lookup into HashMap for remainder
+				hash = (int) arrayMap.get(temp); 
 				if (temp == hash) // if found return true
 				{
 					return true;
@@ -58,9 +53,18 @@ class App {
 
 public class SumInArray {
 	private static int[] demoArray = { 2, 3, 5, 1, 8, 9, 4, 7, 10, 6 };
-
+	private static int sum;
 	public static void main(String[] args) {
-		App app = new App();
-		app.checkSumInArray(demoArray, 15);
+		ArrayApp app = new ArrayApp();
+		Scanner scan = new Scanner (System.in);
+		System.out.println("Please enter a sum to find in array ");
+		try {
+			sum = scan.nextInt();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(app.checkSumInArray(demoArray, sum));
 	}
 }
