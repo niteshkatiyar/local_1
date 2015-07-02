@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class BlockConsumer {
 	
-	private BlockingQueue<Integer> sharedQue = new ArrayBlockingQueue<Integer>(10);
+	private BlockingQueue<Integer> sharedQue;
 	
 	public BlockConsumer(BlockingQueue sharedQue)
 	{

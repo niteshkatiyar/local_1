@@ -22,4 +22,8 @@ public class Vehicle {
 	{
 		return x;
 	}
+	public void getTyres()
+	{
+		System.out.println("4");
+	}
 }

@@ -1,8 +1,10 @@
 package citrusPay;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 /*
  * 
@@ -20,6 +22,31 @@ import java.util.Scanner;
 
 class ArrayApp {
 
+	public boolean checkSumInArrayUsingSet(int[] array, int sum) {
+		int temp = 0, hash = 0;
+		
+		// create HashMap with all values of Array
+		Set<Integer> arraySet = new HashSet<Integer>(); 
+
+		for (int i = 0; i < array.length; i++) {
+			// Inserting values of array into HashMap
+			arraySet.add(array[i]); 
+		}
+
+		for (int i = 0; i < array.length; i++) {
+			// subtract the given sum value from array elements 
+			temp = sum - array[i]; 
+				if (arraySet.contains(temp)) // if found return true
+				{
+					return true;
+				} else {
+					continue;
+				}
+				
+		}
+		return false;
+	}
+	
 	public boolean checkSumInArray(int[] array, int sum) {
 		int temp = 0, hash = 0;
 		

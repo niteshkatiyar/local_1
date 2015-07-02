@@ -33,5 +33,7 @@ public class Bike extends Vehicle
 		bike.info();
 		bike.info("Talking about Bike");
 		System.out.println(bike.info(2));
+		
+		bike.getTyres();
 	}
 }
